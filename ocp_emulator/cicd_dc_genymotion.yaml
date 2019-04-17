@@ -22,7 +22,7 @@ spec:
           memory: 512Mi
       containers:
       - name: genymotion
-        image: "172.30.1.1:5000/appium-server/genymotion:3.0.1"
+        image: "172.30.1.1:5000/appium/genymotion:3.0.1"
         ports:
         - containerPort: 5555
           protocol: TCP
