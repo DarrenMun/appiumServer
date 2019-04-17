@@ -1,6 +1,5 @@
 FROM python:3-alpine
-WORKDIR /root
-USER root
+
 RUN apk add --no-cache --update \
     python3 nodejs-current-npm make git curl
 
