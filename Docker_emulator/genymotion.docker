@@ -6,6 +6,8 @@ ENV TARGET_SDK "26"
 # Install SDK Packages
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}"
 
-RUN cd /opt/sdk/tools/bin/
+RUN chmod -R 777 /opt/sdk/
+RUN chmod -R 777 /
 
-CMD ["avdmanager list"]
+
+CMD ["/opt/sdk/tools/bin/avdmanager list"]
