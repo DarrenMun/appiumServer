@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: genymotion
+  labels:
+    metrics: "genymotion"
+    app: "cicd-genymotion"
+    version: "3.0.1"
+  namespace: appium-server
+    apiServerArguments:
+       feature-gates:
+       - LocalStorageCapacityIsolation=true
+     controllerArguments:
+       feature-gates:
+       - LocalStorageCapacityIsolation=true

@@ -8,6 +8,8 @@ RUN apk add --no-cache --update \
 
 RUN npm install -g appium --unsafe-perm=true --allow-root
 
+RUN apk del nodejs
+
 EXPOSE 4723
 
 CMD ["appium"]
