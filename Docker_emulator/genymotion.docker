@@ -7,7 +7,8 @@ ENV TARGET_SDK "26"
 RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}"
 
 RUN mkdir /.android
-#RUN touch /.android/repositories.cfg
+RUN touch /.android/repositories.cfg
+
 
 RUN ls -lah
 
