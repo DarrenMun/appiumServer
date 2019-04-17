@@ -8,6 +8,6 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms
 
 RUN mkdir /.android
 
-RUN chmod -R 777 /opt/sdk/
+RUN chmod -R 777 /opt/sdk/ /.android
 
 CMD ["/opt/sdk/tools/bin/avdmanager list"]
