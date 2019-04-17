@@ -20,6 +20,14 @@ spec:
     # sourceSecret:
       # name: ignore-https-gitconf
     # contextDir: containers/cicd/appium/dockerfile
+    spec:
+      resources:
+        limits:
+          cpu: '2'
+          memory: 8Gi
+        requests:
+          cpu: 500m
+          memory: 512Mi
   strategy:
     dockerStrategy:
       buildargs:
