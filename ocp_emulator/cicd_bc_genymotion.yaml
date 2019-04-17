@@ -15,7 +15,7 @@ resources:
 spec:
   source:
     git:
-      uri: "https://github.com/DarrenMun/Appium.git"
+      uri: "https://github.com/DarrenMun/appiumServer.git"
       ref: "master"
     # sourceSecret:
       # name: ignore-https-gitconf
