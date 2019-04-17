@@ -1,9 +1,10 @@
 FROM python:3-alpine
-
+WORKDIR /usr/bin
+RUN chmod -R 777 /usr/bin/
 RUN apk add --no-cache --update \
     python3 nodejs-current-npm make git curl
 
-RUN ./usr/bin/npm install -g appium
+RUN ./npm install -g appium
 
 EXPOSE 4723
 
