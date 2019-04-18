@@ -17,6 +17,10 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms
 
 ADD https://dl.google.com/android/repository/sys-img/android/x86-26_r01.zip /opt/sdk/
 
-RUN chmod -R 777 /
+RUN mkdir -p /opt/sdk/system-images/android-26
+RUN unzip /opt/sdk/x86-26_r01.zip /opt/sdk/system-images/android-26/
+
+USER 1001
+RUN chmod -R 777 /opt/sdk/
 
 CMD ["/opt/sdk/tools/bin/sdkmanager --list --verbose"]
