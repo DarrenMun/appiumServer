@@ -10,6 +10,16 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms
 RUN mkdir /.android
 RUN touch /.android/repositories.cfg
 
+RUN mkdir -p opt/sdk/system-images/26/google_apis
+
+WORKDIR /google_apis
+RUN echo y | android update sdk -u -a -t platform-tools \
+    && echo y | android update sdk -u -a -t build-tools-26.0.3 \
+    && echo y | android update sdk -u -a -t android-26 \
+    && echo y | android update sdk -u -a -t extra-google-m2repository \
+    && echo y | android update sdk -u -a -t extra-android-m2repository \
+    && echo y | android update sdk -u -a -t sys-img-armeabi-v7a-google_apis-25
+
 
 RUN ls -lah
 
