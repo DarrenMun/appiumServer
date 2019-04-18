@@ -8,10 +8,12 @@ RUN mkdir /.android
 RUN touch /.android/repositories.cfg
 
 # Install SDK Packages
-RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}" "system-images;android-${SYSTEM_IMAGE_VERSION};google_apis;x86"
+RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}" 
+
+#"system-images;android-${SYSTEM_IMAGE_VERSION};google_apis;x86"
 
 RUN ls -lah
 
 RUN chmod -R 777 /opt/sdk/
 
-CMD ["/opt/sdk/tools/bin/avdmanager list"]
+CMD ["/opt/sdk/tools/bin/sdkmanager --list --verbose"]
