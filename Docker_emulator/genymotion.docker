@@ -17,7 +17,7 @@ RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms
 
 ADD https://dl.google.com/android/repository/sys-img/android/x86-26_r01.zip /opt/sdk/
 
-RUN apk --install add libpulse-dev
+RUN apk --update add libpulse-dev
 RUN mkdir -p /opt/sdk/system-images/android-26
 RUN unzip /opt/sdk/x86-26_r01.zip 
 RUN mv /opt/sdk/x86 /opt/sdk/system-images/android-26/default/
