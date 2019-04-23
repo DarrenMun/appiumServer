@@ -15,3 +15,5 @@ RUN mkdir -p /opt/sdk/tools/lib64/qt/lib
 RUN cp /opt/sdk/tools/qemu/linux-x86_64/qemu-system-i386 /opt/sdk/tools/lib64/qt/lib/qemu-system-i386
 
 #RUN /opt/sdk/tools/lib64/qt/lib/qemu-system-i386 /root/.android/avd/test.avd/userdata.img
+
+CMD [/opt/sdk/tools/lib64/qt/lib/qemu-system-i386]
