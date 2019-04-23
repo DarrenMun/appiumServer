@@ -1,38 +1,17 @@
 FROM alvrme/alpine-android-base
 
-USER root
-ENV BUILD_TOOLS "26.0.3"
-ENV TARGET_SDK "26"
-ENV SYSTEM_IMAGE_VERSION "26"
+ENV BUILD_TOOLS "28.0.3"
+ENV TARGET_SDK "28"
 
-#RUN chmod a+x -R ${ANDROID_HOME}
-#RUN chown -R root:root ${ANDROID_HOME}
+RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}"
+RUN ${ANDROID_HOME}/tools/bin/sdkmanager "system-images;android-23;default;x86"
+RUN echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd -n test -k "system-images;android-23;default;x86"
+RUN ${ANDROID_HOME}/tools/bin/avdmanager list avd
 
-RUN mkdir /.android
-RUN touch /.android/repositories.cfg
+RUN apk add qemu-system-i386
+RUN mkdir -p /opt/sdk/tools/qemu/linux-x86_64
+RUN mv /usr/bin/qemu-system-i386 /opt/sdk/tools/qemu/linux-x86_64/qemu-system-i386
+RUN mkdir -p /opt/sdk/tools/lib64/qt/lib 
+RUN cp /opt/sdk/tools/qemu/linux-x86_64/qemu-system-i386 /opt/sdk/tools/lib64/qt/lib/qemu-system-i386
 
-# Install SDK Packages
-RUN ${ANDROID_HOME}/tools/bin/sdkmanager "build-tools;${BUILD_TOOLS}" "platforms;android-${TARGET_SDK}" "system-images;android-${SYSTEM_IMAGE_VERSION};default;x86"
-
-#ADD https://dl.google.com/android/repository/sys-img/android/x86-26_r01.zip /opt/sdk/
-
-RUN apk --update add pulseaudio-dev 
-RUN apk add mesa-gl 
-
-
-#RUN mkdir -p /opt/sdk/system-images/android-26
-#RUN unzip /opt/sdk/x86-26_r01.zip 
-#RUN mv /opt/sdk/x86 /opt/sdk/system-images/android-26/default/
-
-RUN ${ANDROID_HOME}/tools/bin/sdkmanager emulator
-
-RUN chmod -R 777 /opt/sdk/
-RUN chmod -R 777 /.android
-RUN chmod -R 777 /etc/
-
-RUN apk update && apk add wget
-RUN wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
-RUN wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.29-r0/glibc-2.29-r0.apk
-RUN apk --update add glibc-2.29-r0.apk
-
-CMD ["/opt/sdk/tools/bin/sdkmanager --list --verbose"]
+RUN /opt/sdk/tools/lib64/qt/lib/qemu-system-i386 /root/.android/avd/test.avd/userdata.img
