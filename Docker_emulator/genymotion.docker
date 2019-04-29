@@ -36,3 +36,6 @@ RUN /android-sdk/tools/bin/sdkmanager "emulator"
 
 RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 RUN /android-sdk/tools/emulator -list-avds
+EXPOSE 5900 5902
+
+CMD [/android-sdk/tools/emulator -avd darren -no-audio -no-window -gpu auto -http-proxy 127.0.0.1:5900 -qemu vnc :2 ]
