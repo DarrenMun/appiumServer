@@ -24,7 +24,7 @@ RUN rm sdk-tools-linux-4333796.zip
 RUN mkdir android-sdk
 RUN mv tools android-sdk/tools
 
-WORKDIR /usr/lib/android-sdk
+#WORKDIR /usr/lib/android-sdk
 
 RUN pwd
 RUN yes | /android-sdk/tools/bin/sdkmanager --licenses 
