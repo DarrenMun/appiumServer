@@ -13,7 +13,7 @@ RUN apt-get update \
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV PATH $JAVA_HOME/bin:$PATH
 
-RUN apt-get -y install apt-utils
+#RUN apt-get -y install apt-utils
 RUN apt-get -y update && DEBIAN_FRONTEND=noninteractive apt-get -y install kvm qemu-kvm libvirt-bin bridge-utils libguestfs-tools
 RUN apt update && apt install wget
 RUN apt install -y unzip
