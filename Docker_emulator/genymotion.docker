@@ -42,6 +42,6 @@ RUN chmod -R 777 /root/
 RUN chmod -R 777 /android-sdk/
 
 WORKDIR /root/
-RUN /android-sdk//platform-tools/adb start-server
-CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel
+#RUN /android-sdk//platform-tools/adb start-server
+CMD ["/android-sdk//platform-tools/adb start-server","/android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel"]
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -debug-proxy -gpu guest -http-proxy 127.0.0.1:5900 -qemu vnc :2
