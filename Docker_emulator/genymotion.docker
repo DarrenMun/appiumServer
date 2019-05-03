@@ -38,10 +38,13 @@ RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-
 RUN /android-sdk/tools/emulator -list-avds
 EXPOSE 5900 5902 5037
 
-RUN chmod -R 777 /root/
-RUN chmod -R 777 /android-sdk/
+RUN chmod -R 777 /root
+RUN chmod -R 777 /android-sdk
 
 WORKDIR /root/
+
+USER 1001
+
 #RUN /android-sdk//platform-tools/adb start-server
-CMD ["/android-sdk//platform-tools/adb start-server","/android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel"]
+CMD ["./android-sdk//platform-tools/adb start-server","./android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel"]
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -debug-proxy -gpu guest -http-proxy 127.0.0.1:5900 -qemu vnc :2
