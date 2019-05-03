@@ -36,7 +36,7 @@ RUN /android-sdk/tools/bin/sdkmanager "emulator"
 
 RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 RUN /android-sdk/tools/emulator -list-avds
-EXPOSE 5900 5902
+EXPOSE 5900 5902 5037
 
 RUN chmod -R 777 /root/
 RUN chmod -R 777 /android-sdk/
