@@ -39,6 +39,7 @@ RUN /android-sdk/tools/emulator -list-avds
 EXPOSE 5900 5902
 
 RUN chmod -R 777 /root/
+RUN chmod -R 777 /android-sdk/
 
 WORKDIR /root/
 RUN /android-sdk//platform-tools/adb start-server
