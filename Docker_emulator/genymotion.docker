@@ -33,24 +33,14 @@ RUN /android-sdk/tools/bin/sdkmanager "system-images;android-23;default;x86"
 RUN /android-sdk/tools/bin/sdkmanager "build-tools;23.0.0" "platforms;android-23" 
 RUN /android-sdk/tools/bin/sdkmanager "platform-tools" 
 RUN /android-sdk/tools/bin/sdkmanager "emulator"
+RUN /android-sdk/tools/bin/sdkmanager "tools"
 
 RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 RUN /android-sdk/tools/emulator -list-avds
-EXPOSE 5900 5902 5037
+EXPOSE 5900 5902
 
-
-RUN chown -R 1001:0 /root /android-sdk/platform-tools /android-sdk/emulator && \
-    chgrp -R 0 /root /android-sdk/platform-tools /android-sdk/emulator && \
-    chmod -Rf g+rwx /root /android-sdk/platform-tools /android-sdk/emulator
-    
-#RUN chmod -R 777 /root
-#RUN chmod -R 777 /android-sdk
+RUN chmod -R 777 /root/
 
 WORKDIR /root/
 
-#RUN /android-sdk//platform-tools/adb start-server
-CMD /android-sdk/platform-tools/adb start-server
-
-USER 1001
-#, "/android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel"
-#CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -debug-proxy -gpu guest -http-proxy 127.0.0.1:5900 -qemu vnc :2
+CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel &
