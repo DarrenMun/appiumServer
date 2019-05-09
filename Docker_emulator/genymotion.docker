@@ -44,16 +44,17 @@ EXPOSE 5900 5902 5037 5555
 #RUN chmod -R 777 /root/ /android-sdk/
 
 #RUN /usr/sbin/useradd -d /home/1001 -g 1001 -s /bin/bash -u 1001 1001
-RUN adduser --force-badname u3000
+#RUN adduser --force-badname u3000
+RUN useradd -r -u 1001 appuser
 
-RUN chown -R u3000:0 /root/ /android-sdk/ && \
+RUN chown -R appuser:0 /root/ /android-sdk/ && \
     chgrp -R 0 /root/ /android-sdk/ && \
     chmod -Rf g+rwx /root/ /android-sdk/
 
 WORKDIR /root/
 
 
-USER u3000
+USER appuser
 
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu &
 #CMD /android-sdk/platform-tools/adb start-server \ && 
