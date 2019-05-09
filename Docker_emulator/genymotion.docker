@@ -47,8 +47,8 @@ EXPOSE 5900 5902 5037 5555
 #RUN adduser --force-badname u3000
 RUN useradd -r -u 1001 appuser
 
-RUN chown -R appuser:0 /root/ /android-sdk/ && \
-    chgrp -R 0 /root/ /android-sdk/ && \
+RUN chown -R appuser:1001 /root/ /android-sdk/ && \
+    chgrp -R 1001 /root/ /android-sdk/ && \
     chmod -Rf g+rwx /root/ /android-sdk/
 
 WORKDIR /root/
