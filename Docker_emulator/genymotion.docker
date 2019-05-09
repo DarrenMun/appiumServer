@@ -43,12 +43,11 @@ EXPOSE 5900 5902 5037 5555
 
 #RUN chmod -R 777 /root/ /android-sdk/
 
-RUN export DEBIAN_FRONTEND= noninteractive && \
-    groupadd -r 1001 && \
+RUN groupadd -r 1001 && \
     useradd -r -g 1001 1001
 
 RUN chown -R 1001:1001 /root/ /android-sdk/ && \
-    chgrp -R 0 /root/ /android-sdk/ && \
+    chgrp -R 1001 /root/ /android-sdk/ && \
     chmod -Rf g+rwx /root/ /android-sdk/
 
 WORKDIR /root/
