@@ -43,8 +43,8 @@ EXPOSE 5900 5902 5037 5555
 
 #RUN chmod -R 777 /root/ /android-sdk/
 
-RUN groupadd -r 1001 && \
-    useradd -r -g 1001 1001
+#RUN groupadd -r 1001 && \
+#    useradd -r -g 1001 1001
 
 RUN chown -R 1001:1001 /root/ /android-sdk/ && \
     chgrp -R 1001 /root/ /android-sdk/ && \
