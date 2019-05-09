@@ -43,7 +43,7 @@ EXPOSE 5900 5902 5037 5555
 
 #RUN chmod -R 777 /root/ /android-sdk/
 
-RUN /usr/sbin/useradd -d /home/1001 -g 1000 -s /bin/bash -u 1000 1001
+RUN /usr/sbin/useradd -d /home/1001 -g 1001 -s /bin/bash -u 1001 1001
 #RUN adduser --force-badname 1001
 
 RUN chown -R 1001:0 /root/ /android-sdk/ && \
