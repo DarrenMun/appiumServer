@@ -39,9 +39,9 @@ RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-
 RUN /android-sdk/tools/emulator -list-avds
 EXPOSE 5900 5902 5037 5555
 
-RUN chmod -R 777 /root/
+RUN chmod -R 777 /root/ /android-sdk/
 
-WORKDIR /root/
+WORKDIR /root/ 
 
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu &
 #CMD /android-sdk/platform-tools/adb start-server \ && 
