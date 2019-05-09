@@ -39,7 +39,7 @@ RUN /android-sdk/tools/bin/sdkmanager "tools"
 
 RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 RUN /android-sdk/tools/emulator -list-avds
-EXPOSE 5900 5902 5037 5555 5554 
+EXPOSE 5900 5902 5037 5555 5554 80 443
 
 
 RUN groupadd android && useradd -d /opt/android-sdk-linux -g android -u 1000 android
