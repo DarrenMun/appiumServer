@@ -41,7 +41,10 @@ RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-
 RUN /android-sdk/tools/emulator -list-avds
 EXPOSE 5900 5902 5037 5555
 
-RUN chmod -R 777 /root/ /android-sdk/
+
+RUN groupadd android && useradd -d /opt/android-sdk-linux -g android -u 1000 android
+
+#RUN chmod -R 777 /root/ /android-sdk/
 
 #RUN /usr/sbin/useradd -d /home/1001 -g 1001 -s /bin/bash -u 1001 1001
 #RUN adduser --force-badname u3000
