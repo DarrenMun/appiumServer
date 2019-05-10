@@ -61,6 +61,6 @@ RUN chown -R 1001:0 /root/ /android-sdk/ && \
 #USER 1001
 
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu &
-CMD /android-sdk/platform-tools/adb shell 
+CMD /android-sdk/platform-tools/mkdir test 
 #CMD && /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu off &
 #CMD ["/android-sdk/platform-tools/adb", "-a", "-P", "5037", "server", "nodaemon"]
