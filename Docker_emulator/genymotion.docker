@@ -56,7 +56,7 @@ RUN chown -R 1001:0 /root/ /android-sdk/ && \
     chmod -Rf g+rwx /root/ /android-sdk/
 
 #WORKDIR /root/
-
+RUN ls -lah
 RUN cd /android-sdk/platform-tools/
 RUN pwd
 #RUN sudo adb start-server
