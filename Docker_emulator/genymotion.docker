@@ -56,8 +56,7 @@ RUN chown -R 1001:0 /root/ /android-sdk/ && \
     chmod -Rf g+rwx /root/ /android-sdk/
 
 #WORKDIR /root/
-RUN ls -lah && \
-    pwd
+RUN /android-sdk/platform-tools/adb start-server
 
 USER 1001
 
