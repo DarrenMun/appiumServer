@@ -8,14 +8,33 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get clean && \
     rm -rf /var/cache/apt/*
 
-RUN apt update && apt install wget
-RUN apt install -y unzip
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-
 RUN unzip sdk-tools-linux-4333796.zip
 RUN rm sdk-tools-linux-4333796.zip
 RUN mkdir android-sdk
 RUN mv tools android-sdk/tools
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #FROM ubuntu:16.04
