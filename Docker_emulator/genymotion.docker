@@ -51,14 +51,14 @@ RUN apt install sudo
 #RUN adduser --force-badname u3000
 #RUN useradd -r -u 1000160000 appuser
 
-#RUN chown -R 1001:0 /root/ /android-sdk/ && \
-#    chgrp -R 0 /root/ /android-sdk/ && \
- #   chmod -Rf g+rwx /root/ /android-sdk/
+RUN chown -R 1001:0 /root/ /android-sdk/ && \
+    chgrp -R 0 /root/ /android-sdk/ && \
+    chmod -Rf g+rwx /root/ /android-sdk/
 
-WORKDIR /root/
+#WORKDIR /root/
 #RUN /android-sdk/platform-tools/adb start-server
 
-#USER 1001
+USER 1001
 
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu &
 #CMD /android-sdk/platform-tools/adb start-server 
