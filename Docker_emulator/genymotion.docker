@@ -1,13 +1,7 @@
-FROM ubuntu:16.04
 
 
 
-
-
-
-
-
-
+#FROM ubuntu:16.04
 
 #ENV ANDROID_VERSION "23"
 #ENV ANDROID_HOME "/usr/lib/android-sdk"
