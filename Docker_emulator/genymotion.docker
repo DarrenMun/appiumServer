@@ -42,23 +42,23 @@ RUN /android-sdk/tools/emulator -list-avds
 EXPOSE 5900 5902 5037 5555 5554 80 443
 
 
-RUN groupadd android && useradd -d /opt/android-sdk-linux -g android -u 1000 android
+#RUN groupadd android && useradd -d /opt/android-sdk-linux -g android -u 1000 android
 
-RUN chmod -R 777 /root/ /android-sdk /android-sdk/platform-tools /android-sdk/platform-tools/adb /root
+#RUN chmod -R 777 /root/ /android-sdk /android-sdk/platform-tools /android-sdk/platform-tools/adb /root
 RUN apt install sudo
 
 #RUN /usr/sbin/useradd -d /home/1001 -g 1001 -s /bin/bash -u 1001 1001
 #RUN adduser --force-badname u3000
 #RUN useradd -r -u 1000160000 appuser
 
-#RUN chown -R appuser:1000160000 /root/ /android-sdk/ && \
-#    chgrp -R 1000160000 /root/ /android-sdk/ && \
-#    chmod -Rf g+rwx /root/ /android-sdk/
+RUN chown -R 1001:0 /root/ /android-sdk/ && \
+    chgrp -R 0 /root/ /android-sdk/ && \
+    chmod -Rf g+rwx /root/ /android-sdk/
 
 #WORKDIR /root/
 
 
-#USER appuser
+USER 1001
 
 #CMD /android-sdk/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu &
 #CMD /android-sdk/platform-tools/adb start-server \ && 
