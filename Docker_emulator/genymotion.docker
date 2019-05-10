@@ -46,7 +46,7 @@ EXPOSE 5900 5902 5037 5555 5554 80 443
 
 #RUN chmod -R 777 /root/ /android-sdk /android-sdk/platform-tools /android-sdk/platform-tools/adb /root
 RUN apt install sudo
-
+RUN /android-sdk/platform-tools/sudo adb start-server
 #RUN /usr/sbin/useradd -d /home/1001 -g 1001 -s /bin/bash -u 1001 1001
 #RUN adduser --force-badname u3000
 #RUN useradd -r -u 1000160000 appuser
