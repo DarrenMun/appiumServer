@@ -20,7 +20,7 @@ RUN /android-sdk/tools/bin/sdkmanager --update
 RUN /android-sdk/tools/bin/sdkmanager "platforms;android-23" "platform-tools" "tools"
 
 EXPOSE 5037
-
+USER root
 CMD /android-sdk/platform-tools/adb -a -P 5037 start-server
 
 
