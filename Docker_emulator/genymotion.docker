@@ -58,7 +58,8 @@ RUN chown -R 1001:0 /root/ /android-sdk/ && \
 #WORKDIR /root/
 RUN ls -lah && \
     cd /android-sdk/platform-tools/ && \
-    sudo adb start-server
+    sudo adb start-server && \
+    ls -lah
     
 RUN pwd
 
