@@ -15,6 +15,12 @@ RUN mkdir android-sdk
 RUN mv tools android-sdk/tools
 
 
+RUN yes | /android-sdk/tools/bin/sdkmanager --licenses 
+RUN /android-sdk/tools/bin/sdkmanager --update
+RUN /android-sdk/tools/bin/sdkmanager "platforms;android-23" "platform-tools" "tools"
+
+
+
 
 
 
