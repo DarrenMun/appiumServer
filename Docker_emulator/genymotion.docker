@@ -25,7 +25,7 @@ RUN opt/tools/bin/sdkmanager "platform-tools"
 
 EXPOSE 5037
 RUN ls -lah
-#RUN chmod a+x /android-sdk/platform-tools
+RUN chmod -R 777 /opt/
 CMD /opt/platform-tools/adb -a -P 5037 start-server
 
 
