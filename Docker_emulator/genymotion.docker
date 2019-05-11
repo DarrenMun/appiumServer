@@ -18,13 +18,13 @@ RUN pwd
 #RUN mv tools android-sdk/tools
 
 
-RUN yes | /android-sdk/tools/bin/sdkmanager --licenses 
-RUN /android-sdk/tools/bin/sdkmanager --update "platform-tools"
+RUN yes | /tools/bin/sdkmanager --licenses 
+RUN /tools/bin/sdkmanager --update "platform-tools"
 
 EXPOSE 5037
 ENV PATH $PATH:/opt/platform-tools
 RUN chmod a+x /opt/platform-tools
-CMD /android-sdk/platform-tools/adb -a -P 5037 start-server
+CMD /opt/platform-tools/adb -a -P 5037 start-server
 
 
 
