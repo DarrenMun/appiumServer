@@ -21,7 +21,7 @@ RUN /android-sdk/tools/bin/sdkmanager --update "platform-tools"
 EXPOSE 5037
 ENV PATH $PATH:/opt/platform-tools
 chmod a+x /opt/platform-tools
-CMD /android-sdk/platform-tools/adb -a -P 5037 start
+CMD /android-sdk/platform-tools/adb -a -P 5037 start-server
 
 
 
