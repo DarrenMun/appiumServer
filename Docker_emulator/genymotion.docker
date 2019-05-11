@@ -12,7 +12,7 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN unzip sdk-tools-linux-4333796.zip
 RUN rm sdk-tools-linux-4333796.zip
 
-RUN mkdir -p /root/.android/
+RUN mkdir -pm 777 ~//.android $ANDROID_HOME
 
 ENV ANDROID_HOME "/opt"
 ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
@@ -25,7 +25,7 @@ RUN opt/tools/bin/sdkmanager "platform-tools"
 
 EXPOSE 5037
 RUN ls -lah
-RUN chmod -R 777 /opt/platform-tools/ /root/
+RUN chmod -R 777 /opt/platform-tools /root/
 
 WORKDIR /root/
 RUN ls -lah
