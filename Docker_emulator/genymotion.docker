@@ -16,11 +16,10 @@ RUN mv tools android-sdk/tools
 
 
 RUN yes | /android-sdk/tools/bin/sdkmanager --licenses 
-RUN /android-sdk/tools/bin/sdkmanager --update
-RUN /android-sdk/tools/bin/sdkmanager "platforms;android-23" "platform-tools" "tools"
+RUN /android-sdk/tools/bin/sdkmanager --update "platform-tools"
 
 EXPOSE 5037
-USER root
+ENV PATH $PATH:/opt/platform-tools
 CMD /android-sdk/platform-tools/adb -a -P 5037 start-server
 
 
