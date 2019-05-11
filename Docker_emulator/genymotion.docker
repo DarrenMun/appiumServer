@@ -11,6 +11,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN unzip sdk-tools-linux-4333796.zip
 RUN rm sdk-tools-linux-4333796.zip
+
+RUN ls -lah
+RUN pwd
 #RUN mkdir android-sdk
 #RUN mv tools android-sdk/tools
 
