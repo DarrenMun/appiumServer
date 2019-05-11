@@ -11,8 +11,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN unzip sdk-tools-linux-4333796.zip
 RUN rm sdk-tools-linux-4333796.zip
-RUN mkdir android-sdk
-RUN mv tools android-sdk/tools
+#RUN mkdir android-sdk
+#RUN mv tools android-sdk/tools
 
 
 RUN yes | /android-sdk/tools/bin/sdkmanager --licenses 
@@ -20,7 +20,8 @@ RUN /android-sdk/tools/bin/sdkmanager --update "platform-tools"
 
 EXPOSE 5037
 ENV PATH $PATH:/opt/platform-tools
-CMD /android-sdk/platform-tools/adb -a -P 5037 start-server
+chmod a+x /opt/platform-tools
+CMD /android-sdk/platform-tools/adb -a -P 5037 start
 
 
 
