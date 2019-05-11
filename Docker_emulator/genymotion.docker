@@ -12,12 +12,10 @@ RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN unzip sdk-tools-linux-4333796.zip
 RUN rm sdk-tools-linux-4333796.zip
 
-RUN mkdir -m 0750 /root/.android
+RUN mkdir -p /root/.android/
 
 ENV ANDROID_HOME "/opt"
 ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
-
-
 RUN mv tools opt/tools
 
 
@@ -27,7 +25,10 @@ RUN opt/tools/bin/sdkmanager "platform-tools"
 
 EXPOSE 5037
 RUN ls -lah
-RUN chmod -R 777 /opt/platform-tools/
+RUN chmod -R 777 /opt/platform-tools/ /root/
+
+WORKDIR /root/
+RUN ls -lah
 
 CMD ["/opt/platform-tools/adb", "-a", "-P", "5037", "server", "nodaemon"]
 #CMD /opt/platform-tools/adb -a -P 5037 start-server
