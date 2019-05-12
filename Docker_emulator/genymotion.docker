@@ -30,8 +30,8 @@ RUN chmod -R 777 /opt/platform-tools /root/
 WORKDIR /root/
 RUN ls -lah
 
-CMD ["/opt/platform-tools/adb", "-a", "-P", "5037", "server", "nodaemon"]
-#CMD /opt/platform-tools/adb -a -P 5037 start-server
+#CMD ["/opt/platform-tools/adb", "-a", "-P", "5037", "server", "nodaemon"]
+RUN /opt/platform-tools/adb -a -P 5037 start-server
 
 
 
