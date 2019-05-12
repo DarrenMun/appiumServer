@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine
 RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
-RUN chmod -R 777 /usr/bin/
+RUN chmod -R 777 /usr/bin/ /root/
 EXPOSE 5037
 CMD /usr/bin/adb -a -P 5037 start-server
 
