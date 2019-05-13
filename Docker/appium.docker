@@ -9,7 +9,7 @@ RUN apk add --no-cache --update \
     python3 nodejs-current-npm
 
 RUN npm install -g appium-version-manager --unsafe-perm=true --allow-root
-#RUN avm $APPIUM_VERSION
+RUN avm $APPIUM_VERSION
 
 RUN apk del nodejs
 RUN apk del python3
