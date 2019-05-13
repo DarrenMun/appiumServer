@@ -2,8 +2,8 @@ FROM openjdk:8-jre-alpine
 USER root
 RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/main/ add sudo
-RUN chmod -Rf g+rwx /usr/bin/ /root/
-RUN chown -R root:root /usr/bin/ /root/
+#RUN chmod -Rf g+rwx /usr/bin/ /root/
+RUN chown root:root /usr/bin/sudo
 RUN chmod 4755 /usr/bin/sudo
 RUN chgrp -R 0 /usr/bin/ /root/
 
