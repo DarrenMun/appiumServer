@@ -45,6 +45,7 @@ EXPOSE 5037
 #RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 #USER 1001
 #EXPOSE 5037
+#EXPOSE 5555-5585
 #CMD /usr/bin/adb -a -P 5037 start-server
 
 ##########################################
