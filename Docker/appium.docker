@@ -18,4 +18,4 @@ RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/test
 
 EXPOSE 4723 5037
 
-CMD /usr/bin/adb start-server && appium
+CMD appium
