@@ -24,17 +24,17 @@ spec:
       - name: genymotion
         image: "172.30.1.1:5000/appium/genymotion:3.0.1"
         ports:
-        - containerPort: 5555
+        - containerPort: 5900
           protocol: TCP
         livenessProbe:
           initialDelaySeconds: 120
           tcpSocket:
-            port: 5555
+            port: 5900
           timeoutSeconds: 5
         readinessProbe:
           initialDelaySeconds: 180
           tcpSocket:
-            port: 5555
+            port: 5900
           timeoutSeconds: 5
         volumeMounts:
         - mountPath: "/var/lib/genymotion"
