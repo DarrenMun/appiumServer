@@ -32,6 +32,8 @@ RUN /opt/tools/bin/sdkmanager "system-images;android-23;default;x86" "build-tool
 
 RUN echo no | /opt/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 
+RUN chmod -R 777 /opt/ /root/
+
 EXPOSE 5037
 #RUN /usr/bin/adb kill-server
 #CMD /usr/bin/adb start-server
