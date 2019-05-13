@@ -20,10 +20,8 @@ RUN apt -y install android-tools-adb android-tools-fastboot
 RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
 RUN unzip sdk-tools-linux-4333796.zip
 RUN rm sdk-tools-linux-4333796.zip
+RUN mv tools opt/tools
 
-
-RUN pwd
-RUN ls -lah
 RUN yes | /opt/tools/bin/sdkmanager --licenses
 RUN /opt/tools/bin/sdkmanager --update
 RUN /opt/tools/bin/sdkmanager "system-images;android-23;default;x86" "build-tools;23.0.0" "platforms;android-23" "platform-tools" "emulator" "tools"
