@@ -1,6 +1,6 @@
 FROM openjdk:8-jre-alpine
 
-USER root
+
 ENV APPIUM_VERSION "0.17.6"
 
 RUN apk add --no-cache bash
@@ -9,7 +9,7 @@ RUN apk add --no-cache --update \
     python3 nodejs-current-npm
 
 RUN npm install -g appium-version-manager --unsafe-perm=true --allow-root
-RUN avm $APPIUM_VERSION
+#RUN avm $APPIUM_VERSION
 
 RUN apk del nodejs
 RUN apk del python3
@@ -17,5 +17,5 @@ RUN apk del python3
 RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 
 EXPOSE 4723 5037
-USER 1001
-CMD /usr/bin/adb start-server && appium -verbose
+
+CMD /usr/bin/adb start-server && appium
