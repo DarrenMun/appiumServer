@@ -36,4 +36,6 @@ RUN chmod -R 777 /opt/ /root/ /opt/emulator/
 
 EXPOSE 5037 5092 5555-5585 
 
-CMD /usr/bin/adb start-server ; opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off &
+#CMD /usr/bin/adb start-server ; opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off &
+CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off -vnc :0
+#emulator64-${EMU}
