@@ -7,10 +7,10 @@ metadata:
     app: "cicd-genymotion"
 spec:
   ports:
-  - name: 5555-http
-    port: 5555
+  - name: 5900-http
+    port: 5900
     protocol: TCP
-    targetPort: 5555
+    targetPort: 5900
   selector:
     metrics: genymotion
   sessionAffinity: None
