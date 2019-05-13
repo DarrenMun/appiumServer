@@ -1,8 +1,32 @@
 
 FROM ubuntu:16.04
 
+ENV ANDROID_HOME "/opt"
+ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    dpkg --add-architecture i386 && \
+    apt-get update && \
+    apt-get upgrade && \
+    apt-get -y install libc6:i386 libstdc++6:i386 && \
+    apt-get -y install wget unzip openjdk-8-jdk  && \
+    apt-get clean && \
+    rm -rf /var/cache/apt/*
+
 RUN apt update 
+RUN apt upgrade
 RUN apt -y install android-tools-adb android-tools-fastboot
+
+RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
+RUN unzip sdk-tools-linux-4333796.zip
+RUN rm sdk-tools-linux-4333796.zip
+
+RUN yes | /android-sdk/tools/bin/sdkmanager --licenses
+RUN /android-sdk/tools/bin/sdkmanager --update
+RUN /android-sdk/tools/bin/sdkmanager "system-images;android-23;default;x86" "build-tools;23.0.0" "platforms;android-23" "platform-tools" "emulator" "tools"
+
+RUN echo no | /android-sdk/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
+
 EXPOSE 5037
 RUN /usr/bin/adb kill-server
 CMD /usr/bin/adb start-server
