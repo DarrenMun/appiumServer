@@ -34,6 +34,6 @@ RUN echo no | /opt/tools/bin/avdmanager create avd -n darren -k "system-images;a
 
 RUN chmod -R 777 /opt/ /root/ /opt/emulator/
 
-EXPOSE 5037 5555-5585 
+EXPOSE 5037 5092 5555-5585 
 
 CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off & && /usr/bin/adb start-server
