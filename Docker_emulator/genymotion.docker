@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 RUN apt update 
 RUN apt -y install android-tools-adb android-tools-fastboot
 EXPOSE 5037
-CMD /usr/bin/adb -a -P 5037 start-server
+CMD /usr/bin/adb start-server
 
 ##########################################
 
