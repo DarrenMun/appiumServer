@@ -13,7 +13,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get upgrade && \
     apt-get -y install libc6:i386 libstdc++6:i386 && \
-    apt-get -y install wget unzip openjdk-8-jdk  && \
+    apt-get -y install wget unzip openjdk-8-jdk xvfb && \
     apt-get clean && \
     rm -rf /var/cache/apt/*
 
