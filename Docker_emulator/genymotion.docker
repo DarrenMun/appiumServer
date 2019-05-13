@@ -39,4 +39,4 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443
 
 #CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off -vnc :0
 CMD opt/emulator/emulator -avd darren -http-proxy http://127.0.0.1:5000
-CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
+#CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
