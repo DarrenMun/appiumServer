@@ -3,8 +3,10 @@ FROM ubuntu:16.04
 
 RUN apt update 
 RUN apt -y install android-tools-adb android-tools-fastboot
+EXPOSE 5037
+CMD /usr/bin/adb -a -P 5037 start-server
 
-########################################
+##########################################
 
 #FROM openjdk:8-jre-alpine
 #USER root
@@ -13,7 +15,7 @@ RUN apt -y install android-tools-adb android-tools-fastboot
 #EXPOSE 5037
 #CMD /usr/bin/adb -a -P 5037 start-server
 
-########################################
+##########################################
 
 
 #RUN export DEBIAN_FRONTEND=noninteractive && \
