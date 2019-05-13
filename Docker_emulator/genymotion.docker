@@ -1,3 +1,11 @@
+
+FROM ubuntu:16.04
+
+RUN apt update 
+RUN apt -y install android-tools-adb android-tools-fastboot
+
+########################################
+
 #FROM openjdk:8-jre-alpine
 #USER root
 #RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
@@ -5,12 +13,8 @@
 #EXPOSE 5037
 #CMD /usr/bin/adb -a -P 5037 start-server
 
-#######################################
-FROM ubuntu:16.04
+########################################
 
-
-RUN apt update 
-RUN apt -y install android-tools-adb android-tools-fastboot
 
 #RUN export DEBIAN_FRONTEND=noninteractive && \
 #    dpkg --add-architecture i386 && \
@@ -46,22 +50,6 @@ RUN apt -y install android-tools-adb android-tools-fastboot
 #RUN /opt/platform-tools/adb -a -P 5037 start-server
 
 #######################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #FROM ubuntu:16.04
 
