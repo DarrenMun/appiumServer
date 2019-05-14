@@ -4,10 +4,10 @@ WORKDIR /usr/bin
 
 RUN chmod -R 777 /usr/bin/
 RUN apk add --no-cache --update \
+    apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
     python3 nodejs-current-npm make git curl
 
 RUN npm install -g appium --unsafe-perm=true --allow-root
-
 
 EXPOSE 4723 5037
 
