@@ -7,7 +7,7 @@ RUN apk add --no-cache --update \
     python3 nodejs-current-npm make git curl
 
 RUN npm install -g appium --unsafe-perm=true --allow-root
-RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools \
+RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 
 
 EXPOSE 4723 5037
