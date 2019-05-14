@@ -37,7 +37,7 @@ RUN chmod -R 777 /opt/ /root/ /opt/emulator/
 EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000
 #5555-5585 
 
-RUN apt-get -y install x11vnc
+RUN apt-get -y install x11vnc libx11-xcb1
 
 #CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off -vnc :0
 #CMD opt/emulator/emulator -avd darren -http-proxy http://127.0.0.1:5000
