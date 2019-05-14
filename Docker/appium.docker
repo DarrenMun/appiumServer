@@ -16,4 +16,4 @@ EXPOSE 4723 5037
 RUN apk del nodejs
 RUN apk del python3
 
-CMD /usr/bin/adb start-server
+CMD /usr/bin/adb start-server && appium
