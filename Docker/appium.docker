@@ -11,7 +11,7 @@ RUN npm install -g appium --unsafe-perm=true --allow-root
 
 RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 
-EXPOSE 4723 5037
+EXPOSE 4723 5037 30036
 
 RUN apk del nodejs
 RUN apk del python3
