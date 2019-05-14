@@ -4,7 +4,7 @@ WORKDIR /usr/bin
 
 RUN chmod -R 777 /usr/bin/
 RUN apk add --no-cache --update \
-    apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
+    apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools \
     python3 nodejs-current-npm make git curl
 
 RUN npm install -g appium --unsafe-perm=true --allow-root
@@ -19,7 +19,7 @@ CMD ["appium"]
 #RUN apk add --no-cache bash
 #RUN apk add --no-cache python3
 #RUN apk add --no-cache --update \
-#    python3 nodejs-current-npm
+#python3 nodejs-current-npm
 
 #RUN npm install -g appium --unsafe-perm=true --allow-root
 
