@@ -2,8 +2,6 @@ FROM openjdk:8-jre-alpine
 
 #WORKDIR /usr/bin
 
-RUN chmod -R 777 /usr/bin/
-
 #RUN apk add --no-cache bash
 #RUN apk add --no-cache python3
 #RUN apk add --no-cache --update \
@@ -11,7 +9,7 @@ RUN chmod -R 777 /usr/bin/
 
 #RUN npm install -g appium --unsafe-perm=true --allow-root
 
-RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
+#RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 
 RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ add android-tools
 
@@ -19,5 +17,8 @@ RUN apk --update-cache --repository http://dl-3.alpinelinux.org/alpine/edge/test
 
 #RUN apk del nodejs
 #RUN apk del python3
+
+RUN chmod -R 777 /usr/bin/
+
 
 CMD /usr/bin/adb start-server
