@@ -40,5 +40,5 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000
 RUN apt-get -y install x11vnc libx11-xcb1 libxcb-xinerama0
 
 #CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off -vnc :0
-CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -vnc :0
+CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
 #CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu swiftshader -timezone Africa/Johannesburg -qemu -sdl
