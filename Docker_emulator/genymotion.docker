@@ -29,7 +29,7 @@ RUN /opt/tools/bin/sdkmanager "system-images;android-23;default;x86" "build-tool
 
 RUN echo no | /opt/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 
-#EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902
+EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902
 
 #CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off -vnc :0
 #CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu swiftshader -timezone Africa/Johannesburg -qemu -sdl
