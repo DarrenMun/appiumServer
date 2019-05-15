@@ -35,4 +35,4 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902
 #CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu swiftshader -timezone Africa/Johannesburg -qemu -sdl
 
 #CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
-CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu &
+CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -skin 480x800 -qemu -usbdevice tablet &
