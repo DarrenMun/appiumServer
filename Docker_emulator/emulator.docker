@@ -17,14 +17,16 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get -y install wget unzip openjdk-8-jdk-headless && \
     apt-get clean && \
     rm -rf /var/cache/apt/*
-   
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$SDK_TOOLS_VERSION.zip
-RUN unzip sdk-tools-linux-$SDK_TOOLS_VERSION.zip
-RUN rm sdk-tools-linux-$SDK_TOOLS_VERSION.zip
-RUN mv tools opt/tools
 
-RUN yes | /opt/tools/bin/sdkmanager --licenses
-RUN /opt/tools/bin/sdkmanager --update
-RUN /opt/tools/bin/sdkmanager "system-images;android-$ANDROID_API_VERSION;default;x86" "build-tools;$BUILD_TOOLS_VERSION" "platforms;android-$ANDROID_API_VERSION" "platform-tools" "emulator" "tools"
+
+RUN wget https://dl.google.com/android/repository/sdk-tools-linux-$SDK_TOOLS_VERSION.zip
+RUN mkdir android_sdk
+RUN unzip sdk-tools-linux-$SDK_TOOLS_VERSION.zip -d /android_sdk
+RUN rm sdk-tools-linux-$SDK_TOOLS_VERSION.zip
+
+
+RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
+RUN $ANDROID_HOME/tools/bin/sdkmanager --update
+RUN $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-$ANDROID_API_VERSION;default;x86" "build-tools;$BUILD_TOOLS_VERSION" "platforms;android-$ANDROID_API_VERSION" "platform-tools" "emulator" "tools"
 
 
