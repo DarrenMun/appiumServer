@@ -13,9 +13,14 @@ RUN apt-get update \
  && apt-get install -y curl python-software-properties 
 
 
-RUN apt-get install -y python3.7 python3-pip\
+RUN apt-get install -y software-properties-common\
  && cd /usr/local/bin \
  && ln -s /usr/bin/python3 python
+
+
+RUN add-apt-repository ppa:deadsnakes/ppa 
+RUN apt-get update
+RUN apt-get install python3.6
 
 #==========================
 #Appium Installation
