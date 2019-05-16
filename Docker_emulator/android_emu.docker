@@ -2,7 +2,7 @@ FROM 172.30.1.1:5000/appium/base-emulator:1
 
 RUN echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 
-EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902
+EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902 4723 5037 30036
 
 #CMD $ANDROID_HOME/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
 CMD ${ANDROID_HOME}/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :2
