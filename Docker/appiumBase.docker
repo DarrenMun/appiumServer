@@ -12,15 +12,18 @@ ENV PATH=$PATH:/usr/local/bin
 RUN apt-get update \
  && apt-get install -y curl python-software-properties 
 
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get update
 
-RUN apt-get install -y software-properties-common\
+
+RUN apt-get install -y software-properties-common python3.7\
  && cd /usr/local/bin \
  && ln -s /usr/bin/python3 python
 
 
-RUN add-apt-repository ppa:deadsnakes/ppa 
-RUN apt-get update
-RUN apt-get install -y python3.7
+#RUN add-apt-repository ppa:deadsnakes/ppa 
+#RUN apt-get update
+#RUN apt-get install -y python3.7
 
 #==========================
 #Appium Installation
