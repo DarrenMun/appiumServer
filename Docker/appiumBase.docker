@@ -37,4 +37,4 @@ RUN npm install -g appium --unsafe-perm=true --allow-root
 #==========================
 
 EXPOSE 4723 5037 30036
-RUN python3 --version
+RUN python3.7 --version
