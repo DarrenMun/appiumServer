@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER DarrenMun
 
+ENV APPIUM_VERSION "1.7.2"
+
 #==========================
 #Appium Installation
 #==========================
@@ -8,7 +10,7 @@ MAINTAINER DarrenMun
 RUN apt-get update \
  && apt-get -y install nodejs \
  && apt-get -y install npm \
- && npm install -g appium
+ && npm install -g appium@$APPIUM_VERSION
  
 #==========================
 #Install python
