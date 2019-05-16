@@ -9,8 +9,8 @@ ENV PATH=$PATH:/usr/local/bin
 #Install python
 #==========================
 
-RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa \
-&& apt install -y python3.7
+RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa 
+RUN apt install -y python3.7
 
 #==========================
 #Appium Installation
