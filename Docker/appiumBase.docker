@@ -3,6 +3,7 @@ MAINTAINER DarrenMun
 
 ENV APPIUM_VERSION "1.7.2"
 
+ENV PATH=$PATH:/usr/local/bin
 #==========================
 #Appium Installation
 #==========================
