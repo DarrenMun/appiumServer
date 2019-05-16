@@ -11,7 +11,7 @@ ENV PATH=$PATH:/usr/local/bin
 RUN apt-get update \
  && apt-get -y install nodejs \
  && apt-get -y install npm
-RUN npm install -g appium@$APPIUM_VERSION
+RUN npm install -g appium@$APPIUM_VERSION --unsafe-perm=true --allow-root
  
 #==========================
 #Install python
