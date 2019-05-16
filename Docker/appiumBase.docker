@@ -11,8 +11,9 @@ ENV PATH=$PATH:/usr/local/bin
 
 RUN apt-get update \
  && apt-get install -y curl python-software-properties 
- 
-RUN apt-get install -y --reinstall python3.7 python3-pip\
+
+
+RUN apt-get install -y python3.7 python3-pip\
  && cd /usr/local/bin \
  && ln -s /usr/bin/python3 python
 
