@@ -11,7 +11,8 @@ ENV PATH=$PATH:/usr/local/bin
 
 RUN apt update
 RUN apt install -y software-properties-common
-RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa 
+RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa
+RUN apt update
 RUN apt install -y python3.7
 
 #==========================
