@@ -1,38 +1,8 @@
-FROM ubuntu:16.04
-
-ENV ANDROID_VERSION "23"
-ENV ANDROID_AVD_HOME "/root/.android/avd"
-ENV ANDROID_HOME "/opt"
-ENV ANDROID_SDK_HOME "/root/.android"
-ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools/23.0.0
-
-RUN export DEBIAN_FRONTEND=noninteractive && \
-    dpkg --add-architecture i386 && \
-    apt-get update && \
-    apt-get upgrade && \
-    apt-get -y install libc6:i386 libstdc++6:i386 && \
-    apt-get -y install wget unzip openjdk-8-jdk && \
-    apt-get clean && \
-    rm -rf /var/cache/apt/*
-
-RUN apt update 
-RUN apt upgrade
-
-RUN wget https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip
-RUN unzip sdk-tools-linux-4333796.zip
-RUN rm sdk-tools-linux-4333796.zip
-RUN mv tools opt/tools
-
-RUN yes | /opt/tools/bin/sdkmanager --licenses
-RUN /opt/tools/bin/sdkmanager --update
-RUN /opt/tools/bin/sdkmanager "system-images;android-23;default;x86" "build-tools;23.0.0" "platforms;android-23" "platform-tools" "emulator" "tools"
+FROM base-emulator:1
 
 RUN echo no | /opt/tools/bin/avdmanager create avd -n darren -k "system-images;android-23;default;x86"
 
 EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902
-
-#CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -timezone Africa/Johannesburg -gpu off -vnc :0
-#CMD opt/emulator/emulator -avd darren -no-audio -no-window -verbose -no-accel -gpu swiftshader -timezone Africa/Johannesburg -qemu -sdl
 
 #CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
 CMD opt/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :2
