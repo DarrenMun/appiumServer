@@ -10,7 +10,7 @@ ENV PATH=$PATH:/usr/local/bin
 #==========================
 
 RUN apt update
-RUN apt install software-properties-common
+RUN apt install -y software-properties-common
 RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa 
 RUN apt install -y python3.7
 
