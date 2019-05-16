@@ -9,11 +9,10 @@ ENV PATH=$PATH:/usr/local/bin
 #Install python
 #==========================
 
-RUN apt update
-RUN apt install -y software-properties-common
-RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa
-RUN apt update
-RUN apt install -y python3.7
+RUN apt-get update \
+ && apt-get install -y python3-dev \
+ && cd /usr/local/bin \
+ && ln -s /usr/bin/python3 python
 
 #==========================
 #Appium Installation
