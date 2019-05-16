@@ -12,9 +12,7 @@ ENV PATH=$PATH:/usr/local/bin
 RUN apt-get update \
  && apt-get install -y curl python-software-properties 
 
-RUN apt-get install -y software-properties-common\
- && cd /usr/local/bin \
- && ln -s /usr/bin/python3 python
+RUN apt-get install -y software-properties-common
 
 
 RUN add-apt-repository ppa:deadsnakes/ppa 
