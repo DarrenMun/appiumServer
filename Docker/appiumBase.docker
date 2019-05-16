@@ -4,22 +4,19 @@ MAINTAINER DarrenMun
 ENV APPIUM_VERSION "1.7.2"
 
 ENV PATH=$PATH:/usr/local/bin
-#==========================
-#Appium Installation
-#==========================
 
-RUN apt-get update \
- && apt-get -y install nodejs \
- && apt-get -y install npm
-RUN npm install -g appium --unsafe-perm=true --allow-root
- 
 #==========================
 #Install python
 #==========================
 
 RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa \
-&& apt install -y python3.7 \
-&& apt-get remove npm
+&& apt install -y python3.7
+
+#==========================
+#Appium Installation
+#==========================
+
+RUN python3 nodejs-current-npm make git curl
 
 #==========================
 #port 4723: 
