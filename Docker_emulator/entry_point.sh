@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #============================================
 #Starts Android emulator in headless mode
