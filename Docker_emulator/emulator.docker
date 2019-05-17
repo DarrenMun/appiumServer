@@ -12,9 +12,9 @@ ENV PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-t
 RUN export DEBIAN_FRONTEND=noninteractive && \
     dpkg --add-architecture i386 && \
     apt-get update && \
-    apt-get -y upgrade && \
-    apt-get -y install libc6:i386 libstdc++6:i386 libpulse0:i386 && \
-    apt-get -y install wget unzip openjdk-8-jdk-headless && \
+    apt-get upgrade && \
+    apt-get -y install libc6:i386 libstdc++6:i386 && \
+    apt-get -y install wget unzip openjdk-8-jdk && \
     apt-get clean && \
     rm -rf /var/cache/apt/*
 
