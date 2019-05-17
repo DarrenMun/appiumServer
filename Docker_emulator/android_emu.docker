@@ -15,7 +15,7 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902 4723 5037 30036
 #==========================================================================
 #Future adding an entry point run emulator > wait for device > run appium
 #==========================================================================
-COPY ./entry_point.sh ${ANDROID_HOME}/entry_point.sh
+COPY entry_point.sh ${ANDROID_HOME}/entry_point.sh
 RUN chmod +x ${ANDROID_HOME}/entry_point.sh
 
 ENTRYPOINT ["${ANDROID_HOME}/entry_point.sh"]
