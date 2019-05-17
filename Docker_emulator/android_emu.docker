@@ -21,7 +21,7 @@ RUN chmod +x ${ANDROID_HOME}/entry_point.sh
 ENTRYPOINT ["${ANDROID_HOME}/entry_point.sh"]
 
 
-CMD ["sh"]
+CMD ["${ANDROID_HOME}/entry_point.sh"]
 
 #CMD $ANDROID_HOME/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
 #CMD ${ANDROID_HOME}/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :2
