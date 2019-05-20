@@ -4,7 +4,7 @@ FROM 172.30.1.1:5000/appium/base-emulator:1
 #Creates Android Virtual Device
 #============================================
 
-RUN echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd -n darren -k "system-images;android-$ANDROID_API_VERSION;default;x86"
+RUN echo no | ${ANDROID_HOME}/tools/bin/avdmanager create avd -n darren -k "system-images;android-25;default;x86"
 
 EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902 4723 5037 30036
 
