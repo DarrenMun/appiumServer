@@ -17,6 +17,7 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902 4723 5037 6790 8200 30036
 #==========================================================================
 COPY Docker_emulator/entry_point.sh ${ANDROID_HOME}/entry_point.sh
 RUN chmod +x ${ANDROID_HOME}/entry_point.sh
+RUN npm i appium-base-driver
 
 CMD ${ANDROID_HOME}/entry_point.sh
 
