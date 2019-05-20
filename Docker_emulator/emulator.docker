@@ -47,7 +47,7 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager --update
 #=================================
 #Installing SDK Packages
 #=================================
-RUN $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-$ANDROID_API_VERSION;default;x86" \
+RUN $ANDROID_HOME/tools/bin/sdkmanager "system-images;android-25;default;x86" \
                                         "build-tools;$BUILD_TOOLS_VERSION" \
                                         "platforms;android-$ANDROID_API_VERSION" \
                                         "platform-tools" \
