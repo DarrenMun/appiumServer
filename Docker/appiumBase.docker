@@ -26,8 +26,8 @@ RUN ln -fs /usr/bin/python2.7 /usr/bin/python
 
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
-RUN npm install -g appium --unsafe-perm=true --allow-root
+RUN npm install -g appium@1.6.2 --no-shrinkwrap --unsafe-perm=true --allow-root
 RUN npm i appium-base-driver
-RUN npm install appium-uiautomator2-driver --uiautomator2_driver_cdnurl=https://github.com/appium/appium-uiautomator2-server/releases/tag/v3.5.1
+RUN npm install appium-uiautomator2-driver --uiautomator2_driver_cdnurl=https://github.com/appium/appium-uiautomator2-server/releases/tag/v3.4.0
 
 RUN python --version
