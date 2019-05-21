@@ -17,8 +17,6 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902 4723 5037 6790 8200 30036
 #==========================================================================
 COPY Docker_emulator/entry_point.sh ${ANDROID_HOME}/entry_point.sh
 RUN chmod +x ${ANDROID_HOME}/entry_point.sh
-RUN npm i appium-base-driver
-RUN npm install appium-uiautomator2-driver --uiautomator2_driver_cdnurl=https://github.com/appium/appium-uiautomator2-server/releases/tag/v3.5.1
 
 CMD ${ANDROID_HOME}/entry_point.sh
 
