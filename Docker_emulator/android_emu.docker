@@ -19,8 +19,6 @@ EXPOSE 5037 5092 5900 5554 5555 22 80 443 5000 5902 4723 5037 6790 8200 30036
 COPY Docker_emulator/entry_point.sh ${ANDROID_HOME}/entry_point.sh
 RUN chmod +x ${ANDROID_HOME}/entry_point.sh
 
-ENV PATH=$PATH:$ANDROID_HOME/platform-tools
-
 CMD ${ANDROID_HOME}/entry_point.sh
 
 #CMD $ANDROID_HOME/emulator/emulator -avd darren -no-audio -no-boot-anim -no-window -verbose -no-accel -gpu off -timezone Africa/Johannesburg -qemu -vnc :0
